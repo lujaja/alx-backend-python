@@ -5,17 +5,25 @@ Type Checking
 from typing import Tuple, List
 
 
-def zoom_array(lst: Tuple[int, ...], factor: int = 2) -> List[int]:
+def zoom_array(lst: Tuple, factor: int = 2) -> List:
     """
-    Generate a zoomed-in version of an array by repeating each element
-      a specified number of times.
+    Function that zooms an array by repeating its elements
+      a certain number of times.
 
     Args:
-        lst (Tuple[int, ...]): The input array to be zoomed in.
-        factor (int, optional): The number of times each element
-          should be repeated. Defaults to 2.
+        lst (Tuple): The input tuple of elements.
+        factor (int): The factor by which to zoom the array.
+          Default is 2.
 
     Returns:
-        List[int]: The zoomed-in version of the input array.
+        List: A list containing the elements of the input
+          tuple repeated by the factor.
     """
     return [item for item in lst * factor]
+
+
+array = (12, 72, 91)
+
+zoom_2x = zoom_array(array)
+
+zoom_3x = zoom_array(array, 3)
