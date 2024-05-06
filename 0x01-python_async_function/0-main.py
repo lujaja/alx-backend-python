@@ -1,7 +1,6 @@
-import asyncio
+measure_time = __import__('2-measure_runtime').measure_time
 
-wait_n = __import__('1-concurrent_coroutines').wait_n
+n = 5
+max_delay = 9
 
-print(asyncio.run(wait_n(5, 5)))
-print(asyncio.run(wait_n(10, 7)))
-print(asyncio.run(wait_n(10, 0)))
+print(measure_time(n, max_delay))
